@@ -1,0 +1,8 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.kadiraslan.tohfosha",
+    "sha256_cert_fingerprints": ["F2:95:A6:17:4D:11:02:1B:A5:9B:66:DD:72:E7:A1:76:08:ED:D1:AE:25:90:67:E9:A1:E0:5A:34:40:2B:50:4C"]
+  }
+}]

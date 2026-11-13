@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>تحفوشة · Tohfosha — بيع واشتري المستعمل في مصر</title>
+<meta name="description" content="تحفوشة: سوق المستعمل في مصر. الكلام كله جوه التطبيق من غير أرقام تليفونات، والتسليم يد بيد.">
+<meta property="og:title" content="تحفوشة · Tohfosha">
+<meta property="og:description" content="بيع واشتري المستعمل في مصر بأمان — الكلام جوه التطبيق والتسليم يد بيد 🤝">
+<meta property="og:image" content="https://kadiraslanka-rgb.github.io/img/og.png">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0B4A3E">
+<link rel="icon" href="img/icon.png">
+<style>
+  :root { --g: #0B4A3E; --g2: #0F5C4D; --gold: #D4B27A; --bg: #F6F4EE; --ink: #26272B; --mut: #7A776F; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Tahoma, sans-serif; background: var(--bg); color: var(--ink); }
+  header { background: var(--g); color: #fff; padding: 14px 18px; display: flex; align-items: center; gap: 10px; }
+  header img { width: 36px; height: 36px; border-radius: 9px; }
+  header b { font-size: 19px; }
+  header span { opacity: .8; font-size: 13px; }
+  main { max-width: 560px; margin: 0 auto; padding: 16px; }
+  .card { background: #fff; border: 1px solid #ECE9E2; border-radius: 20px; overflow: hidden; }
+  .photo { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; background: #E7EFEB; display: block; }
+  .pad { padding: 16px 18px 18px; }
+  h1 { font-size: 21px; margin: 0 0 8px; line-height: 1.4; }
+  .price { font-size: 26px; font-weight: 900; color: var(--g2); }
+  .old { color: #A8A49B; text-decoration: line-through; font-size: 15px; margin-inline-start: 8px; }
+  .off { background: #D2364B; color: #fff; font-weight: 900; font-size: 13px; border-radius: 8px; padding: 2px 9px; margin-inline-start: 8px; }
+  .meta { color: var(--mut); font-size: 14px; margin-top: 6px; }
+  .desc { white-space: pre-line; line-height: 1.7; font-size: 15px; margin-top: 12px; color: #3A3935; }
+  .btn { display: block; text-align: center; text-decoration: none; font-weight: 900; font-size: 17px; border-radius: 14px; padding: 15px; margin-top: 12px; }
+  .open { background: var(--g2); color: #fff; }
+  .get { background: #fff; color: var(--g2); border: 2px solid var(--g2); }
+  .note { text-align: center; color: var(--mut); font-size: 13px; margin: 14px 4px; line-height: 1.7; }
+  .hero { text-align: center; padding: 26px 12px; }
+  .hero img { width: 96px; height: 96px; border-radius: 24px; }
+  .hero h1 { font-size: 26px; margin-top: 14px; }
+  .pts { list-style: none; padding: 0; margin: 18px 0 0; text-align: start; }
+  .pts li { background: #fff; border: 1px solid #ECE9E2; border-radius: 14px; padding: 12px 14px; margin-bottom: 8px; font-size: 15px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
+  .mini { background: #fff; border: 1px solid #ECE9E2; border-radius: 14px; overflow: hidden; text-decoration: none; color: inherit; }
+  .mini img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; background: #E7EFEB; }
+  .mini div { padding: 8px 10px; font-size: 13.5px; }
+  .mini b { color: var(--g2); display: block; margin-top: 3px; }
+  .hide { display: none; }
+</style>
+</head>
+<body>
+<header><img src="img/icon.png" alt=""><div><b>تحفوشة</b><br><span>Tohfosha · سوق المستعمل في مصر</span></div></header>
+<main>
+  <div id="loading" class="note">...</div>
+
+  <section id="listing" class="hide">
+    <div class="card">
+      <img id="lImg" class="photo" alt="">
+      <div class="pad">
+        <h1 id="lTitle"></h1>
+        <div><span id="lPrice" class="price"></span><span id="lOld" class="old"></span><span id="lOff" class="off hide"></span></div>
+        <div id="lMeta" class="meta"></div>
+        <div id="lDesc" class="desc"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="shop" class="hide">
+    <div class="card pad" style="display:flex;align-items:center;gap:12px">
+      <img id="sAvatar" src="img/mark.png" alt="" style="width:60px;height:60px;border-radius:16px;object-fit:cover">
+      <div><h1 id="sName" style="margin:0"></h1><div id="sMeta" class="meta"></div></div>
+    </div>
+    <div id="sGrid" class="grid"></div>
+  </section>
+
+  <section id="home" class="hide hero">
+    <img src="img/icon.png" alt="">
+    <h1>بيع واشتري المستعمل في مصر</h1>
+    <div class="meta">Tohfosha · İkinci el alışveriş · Second-hand marketplace</div>
+    <ul class="pts">
+      <li>💬 الكلام كله جوه التطبيق — من غير أرقام تليفونات</li>
+      <li>🤝 التسليم يد بيد في مكان عام</li>
+      <li>⭐ تقييمات حقيقية للبائعين بعد كل بيعة</li>
+      <li>🔔 تنبيه لما السعر ينزل على الحاجة اللي عاجباك</li>
+    </ul>
+  </section>
+
+  <a id="openBtn" class="btn open" href="#">افتح في تطبيق تحفوشة</a>
+  <a id="getBtn" class="btn get" href="https://play.google.com/store/apps/details?id=com.kadiraslan.tohfosha">حمّل التطبيق من Google Play</a>
+  <p class="note">🔒 لأمانك: متدفعش أي فلوس قبل ما تشوف المنتج بعينك.</p>
+</main>
+<script>
+(function () {
+  var SB = "https://vcyqpknaiwgjncnjbpku.supabase.co", KEY = "sb_publishable_tX2C_oSBeMPH13yH1A67kQ_UwpxIkc-";
+  var PLAY = "https://play.google.com/store/apps/details?id=com.kadiraslan.tohfosha";
+  var q = new URLSearchParams(location.search), l = q.get("l"), u = q.get("u");
+  var $ = function (id) { return document.getElementById(id); };
+  var show = function (id) { $("loading").classList.add("hide"); $(id).classList.remove("hide"); };
+  var path = l ? "open?l=" + encodeURIComponent(l) : u ? "open?u=" + encodeURIComponent(u) : "open";
+  $("openBtn").href = "intent://" + path + "#Intent;scheme=com.kadiraslan.tohfosha;package=com.kadiraslan.tohfosha;S.browser_fallback_url=" + encodeURIComponent(PLAY) + ";end";
+  if (!/Android/i.test(navigator.userAgent)) $("openBtn").classList.add("hide");
+  var api = function (p, opt) { return fetch(SB + p, Object.assign({ headers: { apikey: KEY, "Content-Type": "application/json" } }, opt || {})).then(function (r) { if (!r.ok) throw r; return r.json(); }); };
+  var money = function (n) { return Number(n || 0).toLocaleString("en-US") + " ج.م"; };
+  var safeImg = function (s) { return typeof s === "string" && /^https:\/\//.test(s) ? s : "img/mark.png"; };
+  var place = function (loc) { loc = loc || {}; return [loc.city, loc.governorate].filter(Boolean).join("، "); };
+  function home() { show("home"); }
+  if (l) {
+    api("/rest/v1/listings?select=id,data,status&id=eq." + encodeURIComponent(l)).then(function (rows) {
+      var r = rows && rows[0]; if (!r || r.status === "deleted") return home();
+      var d = r.data || {};
+      document.title = (d.title || "") + " · تحفوشة";
+      $("lImg").src = safeImg(d.images && d.images[0]);
+      $("lTitle").textContent = d.title || "";
+      $("lPrice").textContent = money(d.price);
+      if (Number(d.originalPrice) > Number(d.price)) {
+        $("lOld").textContent = money(d.originalPrice);
+        $("lOff").textContent = "-%" + Math.round((1 - d.price / d.originalPrice) * 100);
+        $("lOff").classList.remove("hide");
+      }
+      $("lMeta").textContent = [r.status === "sold" ? "✅ اتباع" : "", "📍 " + place(d.location), d.seller && d.seller.name ? "👤 " + d.seller.name : ""].filter(Boolean).join("  ·  ");
+      $("lDesc").textContent = String(d.description || "").slice(0, 600);
+      show("listing");
+    }).catch(home);
+  } else if (u) {
+    Promise.all([
+      api("/rest/v1/rpc/tf_seller", { method: "POST", body: JSON.stringify({ p_id: u }) }),
+      api("/rest/v1/listings?select=id,data&status=eq.active&seller_id=eq." + encodeURIComponent(u) + "&order=created_at.desc&limit=20"),
+    ]).then(function (res) {
+      var s = res[0] || {}, items = res[1] || [];
+      if (!s.name && !items.length) return home();
+      $("sName").textContent = s.name || "";
+      $("sAvatar").src = safeImg(s.avatar);
+      $("sMeta").textContent = [s.rating ? "★ " + s.rating + " (" + s.reviewCount + ")" : "", items.length + " منتج"].filter(Boolean).join("  ·  ");
+      items.forEach(function (it) {
+        var d = it.data || {}, a = document.createElement("a");
+        a.className = "mini"; a.href = "?l=" + encodeURIComponent(it.id);
+        var im = document.createElement("img"); im.src = safeImg(d.images && d.images[0]); im.alt = ""; im.loading = "lazy";
+        var dv = document.createElement("div"); dv.textContent = d.title || "";
+        var b = document.createElement("b"); b.textContent = money(d.price); dv.appendChild(b);
+        a.appendChild(im); a.appendChild(dv); $("sGrid").appendChild(a);
+      });
+      show("shop");
+    }).catch(home);
+  } else home();
+})();
+</script>
+</body>
+</html>
